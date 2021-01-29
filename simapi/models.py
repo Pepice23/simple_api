@@ -8,11 +8,3 @@ class Character(models.Model):
 
     def __str__(self):
         return self.name
-
-
-class Logo(models.Model):
-    image = models.ImageField(upload_to="logos")
-    name = models.CharField(max_length=32)
-
-    def __str__(self):
-        return self.name
