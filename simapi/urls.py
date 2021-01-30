@@ -1,7 +1,8 @@
 from django.urls import path
-from .views import ListCharacter, DetailCharacter
+from .views import CharacterList, CharacterDetail, CreateNewCharacter
 
 urlpatterns = [
-    path('<int:pk>/', DetailCharacter.as_view()),
-    path('', ListCharacter.as_view()),
+    path('karakterek/list/', CharacterList.as_view()),
+    path('karakterek/<str:karakter_name>/', CharacterDetail.as_view()),
+    path('uj/', CreateNewCharacter.as_view()),
 ]

@@ -2,7 +2,22 @@ from rest_framework import serializers
 from .models import Character
 
 
-class CharacterSerializer(serializers.ModelSerializer):
+class CharacterListSerializer(serializers.ModelSerializer):
+
     class Meta:
+        fields = ("karakter_name",)
         model = Character
-        fields = ('name', 'race', 'cls',)
+
+
+class CharacterDetailSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        fields = ("karakter_name", "race", "cls")
+        model = Character
+
+
+class NewCharacterSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        fields = ("karakter_name", )
+        model = Character
